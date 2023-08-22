@@ -1,4 +1,4 @@
-
+let totalPrice = 0;
 function clickBtn(target) {
 
     // product name passing
@@ -8,16 +8,13 @@ function clickBtn(target) {
     li.innerText = productName;
     selectedProductContainer.appendChild(li);
 
-    const price = target.parentNode.childNodes[2].innerText;
-    console.log(price);
-
-    // total pricing passing
-    // const totalPriceElement = document.getElementById('product-price');
-    // const totalPrice = totalPriceElement.innerText;
-    // totalPriceElement.innerText = toatal;
-
-
+  
+    // product price acessing
+    const price = target.parentNode.parentNode.childNodes[5].innerText.split(" ")[0];
+    totalPrice = parseInt(totalPrice) + parseInt(price);
+    document.getElementById('total-price').innerText = totalPrice;
 
 
 
 }
+
